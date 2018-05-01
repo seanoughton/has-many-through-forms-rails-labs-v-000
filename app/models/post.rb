@@ -9,4 +9,8 @@ class Post < ActiveRecord::Base
   def comment_content=(comment_content)
     binding.pry
   end
+
+  def comment_content
+    self.content
+  end
 end
