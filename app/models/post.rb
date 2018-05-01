@@ -6,7 +6,7 @@ class Post < ActiveRecord::Base
 
   accepts_nested_attributes_for :comments
 
-  def comment_content
+  def comment_content=(comment_content)
     binding.pry
   end
 end
