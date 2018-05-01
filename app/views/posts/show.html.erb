@@ -2,6 +2,6 @@
 <%= form_for @post do |f| %>
   <%= f.label "Comment" %>
   <%= f.text_field :comments %>
-  <%= f.collection_select :user, User.all, :id, :username %>
+  <%= f.collection_select :users, User.all, :id, :username %>
   <%= f.submit %>
 <% end %>
