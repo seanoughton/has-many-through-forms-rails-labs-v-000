@@ -1,7 +1,7 @@
 <%binding.pry%>
-<%= form_for @appointment do |f| %>
-  <%= f.datetime_select :appointment_datetime %>
-  <%= f.collection_select :doctor, Doctor.all, :id, :name %>
-  <%= f.collection_select :patient, Patient.all, :id, :name %>
+<%= form_for @post do |f| %>
+  <%= f.label "Comment" %>
+  <%= f.text_field :comments %>
+  <%= f.collection_select :user, User.all, :id, :username %>
   <%= f.submit %>
 <% end %>
