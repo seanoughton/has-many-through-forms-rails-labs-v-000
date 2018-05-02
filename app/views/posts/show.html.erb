@@ -1,11 +1,1 @@
-#show an existing post
-#allow a user to comment on a post through a form
-
-
-<%= form_for @post do |f| %>
-  <%= f.fields_for :comments, @post.comments.build do |comment| %>
-   <%= comment.text_field :content %>
-  <% end %>
-
-  <%= f.submit %>
-<% end %>
+<%binding.pry%>
