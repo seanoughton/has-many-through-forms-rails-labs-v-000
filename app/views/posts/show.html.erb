@@ -2,13 +2,13 @@
 
   <input type = "text" name="post[comment][content]" id="comment_content">
 
-  <%= f.text_field :user, list: "users_autocomplete" %>
-    <datalist id = "users_autocomplete">
+  <%= f.text_field :users, list: "comment_user_id" %>
+    <datalist id = "comment_user_id">
       <%User.all.each do |user| %>
           <option value="<%= user.username %>"></option>  
       <% end %>
     </datalist>
-  <% end %>
+  
 
 
   <%= f.submit %>
