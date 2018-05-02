@@ -1,12 +1,5 @@
 <%= form_for @post do |f| %>
 
-  <input="text" name="post[comment][content]" id="comment_content">
-
-  <%= f.collection_select :user, User.all, :id, :name %>
-
-  <%= f.fields_for :comments, @post.comments.build do |comment| %>
-   <%= comment.text_field :content %>
-  <% end %>
 
   <%= f.submit %>
 <% end %>
