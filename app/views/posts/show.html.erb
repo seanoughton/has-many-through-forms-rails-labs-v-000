@@ -1,8 +1,8 @@
 <%= form_for @post do |f| %>
 
 
-  <%= f.fields_for :comments do |x| %>
-
+  <%= f.fields_for :comments do |comments_attributes| %>
+    <%binding.pry%>
   <% end %>
 
 
