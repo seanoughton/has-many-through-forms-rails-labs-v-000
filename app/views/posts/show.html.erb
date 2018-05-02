@@ -1,9 +1,7 @@
 <%= form_for @post do |f| %>
 
-  <input="text" name="post[comment][content]" id="comment_content">
-
-  <%= f.fields_for :comments, @post.comments.build do |comment| %>
-   <%= comment.text_field :content %>
+  <%= f.fields_for :comments, @post.comments.build do |comments_fields| %>
+   <%= comments_fields.text_field :content %>
   <% end %>
 
   <%= f.submit %>
