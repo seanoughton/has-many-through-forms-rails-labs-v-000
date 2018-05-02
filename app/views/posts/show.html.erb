@@ -1,5 +1,11 @@
 <%= form_for @post do |f| %>
 
+<%binding.pry%>
+
+  <%= f.fields_for :comments do |x| %>
+
+  <% end %>
+
 
   <%= f.submit %>
 <% end %>
