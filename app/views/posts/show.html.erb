@@ -1,8 +1,13 @@
 <%= form_for @post do |f| %>
 
+  <input type = "text" name="post[comment][content]" id="comment_content">
 
-  <%= f.fields_for :comments do |comments_attributes| %>
-    <%binding.pry%>
+  <%= f.text_field :user, list: "users_autocomplete" %>
+    <datalist id = "users_autocomplete">
+      <%User.all.each do |user| %>
+          <option value="<%= user.username %>"></option>  
+      <% end %>
+    </datalist>
   <% end %>
 
 
