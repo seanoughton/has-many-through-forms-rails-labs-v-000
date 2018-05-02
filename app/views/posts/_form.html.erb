@@ -6,7 +6,11 @@
 
 <!-- CHOOSE FROM A LIST OF CATEGORIES -->
   <%= f.collection_check_boxes :category_ids, Category.all, :id, :name %>
-  
+
+<!-- CREATE YOUR OWN CATEGORY -->
+  <%= f.fields_for :categories, post.categories.build do |categories_attributes| %>
+    <%= categories_attributes.text_field :name %>
+  <% end %>
 
 
 
