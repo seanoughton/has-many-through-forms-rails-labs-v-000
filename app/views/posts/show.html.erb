@@ -1,11 +1,8 @@
-<%binding.pry%>
-
 <%= form_for @post do |f| %>
 
-  <input type = "text" name="post[comment][content]" id="comment_content">
-
-
-  
+  <%= f.fields_for :comments, @post.comments.build do |comment| %>
+   <%= comment.text_field :content %>
+  <% end %>
 
   <%= f.submit %>
 <% end %>
