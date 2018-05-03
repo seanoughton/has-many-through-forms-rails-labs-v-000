@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <h2>Post Title: <%=@post.title%> </h2>
 <h2>Post Content: <%=@post.content%> </h2>
 <h2>Post Categories: <h2>
@@ -7,13 +7,10 @@
       <li>  <%= category.name %>  </li>
     <%end%>
   </ul>
-=======
-#show an existing post
-#allow a user to comment on a post through a form
+
 
 
 <%= form_for @post do |f| %>
-<%binding.pry%>
   <%= f.fields_for :comments, @post.comments.build do |comment| %>
    <%= comment.text_field :content %>
   <% end %>
