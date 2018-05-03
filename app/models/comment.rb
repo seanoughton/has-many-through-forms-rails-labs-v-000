@@ -5,10 +5,7 @@ class Comment < ActiveRecord::Base
   def user_attributes=(attributes)
     if attributes.include?(:username)
       user = User.find_or_create_by(username: attributes[:username])
-      #self.user = user
-      binding.pry
       user.comments << self
-      #self.save
     else
       user = User.find(attributes[:user_id])
       self.user = user
