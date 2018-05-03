@@ -4,11 +4,12 @@ class Comment < ActiveRecord::Base
 
   def user_attributes=(attributes)
     if attributes.include?(:username)
-      user = User.create(username: attributes[:username])
+      user = User.find_or_create_by(username: attributes[:username])
+      user.comments << self
+    else
+      user = User.find(attributes[:user_id])
       user.comments << self
     end
-    #self.user = User.find(attributes[:user_id])
   end
-  #accepts_nested_attributes_for :post
-  #accepts_nested_attributes_for :user
+
 end
