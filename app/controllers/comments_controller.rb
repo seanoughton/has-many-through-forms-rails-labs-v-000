@@ -2,8 +2,10 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.create(comment_params)
-    @user = User.create(username: params[:comment][:user][:attributes][:username])
-    @user.comments << @comment
+    if params[:comment][:user][:attributes][:username]
+      @user = User.create(username: params[:comment][:user][:attributes][:username])
+      @user.comments << @comment
+    end
     @post = Post.find(params[:post_id])
     @post.comments << @comment
     @post.save
