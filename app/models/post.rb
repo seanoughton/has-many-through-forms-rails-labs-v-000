@@ -8,6 +8,9 @@ class Post < ActiveRecord::Base
 
   accepts_nested_attributes_for :categories
 
+  #accepts_nested_attributes_for :users
+
+
 
   def unique_users
     self.users.uniq
