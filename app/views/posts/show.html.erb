@@ -16,10 +16,11 @@
       <%end%>
     </ul>
 
-<%binding.pry%>
+
 
     <h2>Users who have commented: <h2>
       <ul>
+        <%@post.unique_users%>
         <%@post.users.each do |user|%>
           <%= link_to user.username, user_path(user) %>
         <%end%>
