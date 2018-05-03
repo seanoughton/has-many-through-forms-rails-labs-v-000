@@ -36,9 +36,9 @@
         <input type="hidden" name="post_id" value ="<%=@post.id%>" id="post_id">
 
         <%= f.collection_select :user_id, User.all, :id, :username %>
-
-        <%= f.fields_for :user,  comment.user.build do |users_fields| %>
-          <%= users_fields.text_field :username %>
+        <%binding.pry%>
+        <%= f.fields_for :user,  comment.user.build do |user_fields| %>
+          <%= user_fields.text_field :username %>
         <% end %>
 
 
