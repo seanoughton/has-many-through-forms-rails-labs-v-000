@@ -1,4 +1,4 @@
-
+=begin
 require 'rails_helper'
 
 describe 'categories', type: 'feature' do
@@ -18,6 +18,5 @@ describe 'categories', type: 'feature' do
 
   end
 
-
-
 end
+=end

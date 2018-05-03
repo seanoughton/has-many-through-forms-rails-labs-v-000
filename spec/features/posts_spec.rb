@@ -1,3 +1,4 @@
+=begin
 require 'rails_helper'
 
 describe 'Posts', type: 'feature' do
@@ -69,3 +70,4 @@ describe 'Posts', type: 'feature' do
     end
   end
 end
+=end
