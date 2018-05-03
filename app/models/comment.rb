@@ -5,8 +5,8 @@ class Comment < ActiveRecord::Base
   def user_attributes=(attributes)
     binding.pry
     if attributes.include?(:user_name)
-      @user = User.create(username: attributes[:username])
-      @user.comments << @comment
+      self.user = User.create(username: attributes[:username])
+      self.user.comments << @comment
     end
     #self.user = User.find(attributes[:user_id])
   end
