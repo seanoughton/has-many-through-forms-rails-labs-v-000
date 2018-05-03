@@ -1,1 +1,6 @@
 
+<h2>Here are all of the posts you have commmented on </h2>
+
+<% @user.posts.each do |post| %>
+  <%= link_to post.title, post_path(post) %>
+<% end %>
