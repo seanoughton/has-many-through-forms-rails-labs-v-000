@@ -21,6 +21,7 @@
   <h2>Post Comments: <h2>
     <ul>
       <%@post.comments.each do |comment|%>
+      <%binding.pry%>
         <li>  <%= comment.content %>  </li>
       <%end%>
     </ul>
