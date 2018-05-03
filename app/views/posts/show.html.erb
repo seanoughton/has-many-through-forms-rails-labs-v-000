@@ -8,3 +8,10 @@
       <li>  <%= category.name %>  </li>
     <%end%>
   </ul>
+
+  <h2>Post Comments: <h2>
+    <ul>
+      <%@post.comments.each do |comment|%>
+        <li>  <%= comment.content %>  </li>
+      <%end%>
+    </ul>
