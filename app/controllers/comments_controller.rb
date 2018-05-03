@@ -1,9 +1,8 @@
 class CommentsController < ApplicationController
 
   def create
-    binding.pry
     @comment = Comment.create(comment_params)
-    if params[:comment][:user][:attributes][:username]
+    if !params[:comment][:user][:attributes][:username].empty?
       @user = User.create(username: params[:comment][:user][:attributes][:username])
       @user.comments << @comment
     end
