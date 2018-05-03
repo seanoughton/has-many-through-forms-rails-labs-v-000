@@ -13,6 +13,7 @@
   <%= form_for @post.comments.first do |f| %>
     <%= f.label "Content" %>
     <%= f.text_area :content %>
+    <input type="hidden" name="post_id" value ="<%=@post.id%>" id="post_id">
     <%= f.collection_select :user_id, User.all, :id, :username %>
     <%= f.submit %>
   <% end %>
