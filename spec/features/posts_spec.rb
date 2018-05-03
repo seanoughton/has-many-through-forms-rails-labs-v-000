@@ -35,8 +35,9 @@ describe 'Posts', type: 'feature' do
       expect(page).to have_content('Cool')
       expect(page).to have_content('Funny')
     end
-  end
 =end
+  end
+
   describe 'show' do
     before do
       @category = Category.create(name: "Cool")
