@@ -5,6 +5,7 @@ class CommentsController < ApplicationController
     post = Post.find(params[:post_id])
     post.comments << comment
     post.save
+    binding.pry
     redirect_to post
   end
 
