@@ -3,13 +3,13 @@ class Comment < ActiveRecord::Base
   belongs_to :post
 
   def user_attributes=(attributes)
+    binding.pry
     if attributes.include?(:username)
       user = User.find_or_create_by(username: attributes[:username])
       user.comments << self
     else
       user = User.find(attributes[:user_id])
-      self.user = user
-      self.save
+      user.comments << self
     end
   end
 
