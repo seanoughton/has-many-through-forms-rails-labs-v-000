@@ -37,7 +37,7 @@
 
         <%= f.collection_select :user_id, User.all, :id, :username %>
 
-        <%= f.fields_for :users,  comment.users.build do |users_fields| %>
+        <%= f.fields_for :user,  comment.user.build do |users_fields| %>
           <%= users_fields.text_field :username %>
         <% end %>
 
