@@ -8,7 +8,7 @@ class Post < ActiveRecord::Base
 
   accepts_nested_attributes_for :categories
 
-  #accepts_nested_attributes_for :users
+  accepts_nested_attributes_for :users
 
 
 

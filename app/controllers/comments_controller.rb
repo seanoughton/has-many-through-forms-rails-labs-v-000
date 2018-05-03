@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
 
   def create
+    binding.pry
     @comment = Comment.create(comment_params)
     @post = Post.find(params[:post_id])
     @post.comments << @comment
