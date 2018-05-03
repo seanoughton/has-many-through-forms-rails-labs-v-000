@@ -10,11 +10,10 @@
   </ul>
 
 
-  <%= form_for comment do |f| %>
-
+  <%= form_for @comment do |f| %>
     <%= f.label "Content" %>
     <%= f.text_area :content %>
-
+    <%= f.collection_select :user_id, User.all, :id, :username %>
     <%= f.submit %>
   <% end %>
 
