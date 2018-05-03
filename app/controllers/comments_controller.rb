@@ -9,6 +9,7 @@ class CommentsController < ApplicationController
       @user.comments << @comment
     end
 =end
+  binding.pry
     @post = Post.find(params[:post_id])
     @post.comments << @comment
     @post.save
