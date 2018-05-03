@@ -12,8 +12,14 @@
   <h2>Post Comments: <h2>
     <ul>
       <%@post.comments.each do |comment|%>
-      <%binding.pry%>
         <li>  <%= comment.content %>  </li>
-        <%= link_to comment.user.username, user_path(comment.user) %>
       <%end%>
     </ul>
+
+
+    <h2>Users who have commented: <h2>
+      <ul>
+        <%@post.users.each do |user|%>
+          <%= link_to user.username, user_path(user) %>
+        <%end%>
+      </ul>
