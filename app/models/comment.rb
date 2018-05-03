@@ -3,8 +3,7 @@ class Comment < ActiveRecord::Base
   belongs_to :post
 
   def user_attributes=(attributes)
-    binding.pry
-    if attributes.include?(:user_name)
+    if attributes.include?(:username)
       self.user = User.create(username: attributes[:username])
       self.user.comments << @comment
     end

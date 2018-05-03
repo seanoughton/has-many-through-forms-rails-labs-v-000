@@ -41,8 +41,8 @@
   <br>
 
       <h3> Or create a new user </h3>
-        <input type="text" name="comment[user][attributes][username]" id="comment_user_attributes_username">
-        
+        <input type="text" name="comment[user_attributes][username]" id="comment_user_attributes_username">
+
         <%= f.fields_for :user do |user_fields| %>
           <%= user_fields.text_field :username %>
         <% end %>
