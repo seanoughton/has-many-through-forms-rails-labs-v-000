@@ -33,8 +33,9 @@
       <%= form_for @post.comments.first do |f| %>
         <%= f.label "Content" %>
         <%= f.text_area :content %>
-  <br>
-        <input type="hidden" name="comment[post_id]" value ="<%=@post.id%>" id="post_id">
+        <%= f.hidden_field :post_id, :value => @post.id %>
+
+      
   <br>
       <h3> Here is a list of all of the users to choose from</h3>
         <%= f.collection_select :user_id, User.all, :id, :username %>
