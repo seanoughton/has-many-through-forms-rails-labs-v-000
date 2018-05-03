@@ -35,7 +35,7 @@
         <%= f.text_area :content %>
         <%= f.hidden_field :post_id, :value => @post.id %>
 
-      
+
   <br>
       <h3> Here is a list of all of the users to choose from</h3>
         <%= f.collection_select :user_id, User.all, :id, :username %>
@@ -44,7 +44,8 @@
       <h3> Or create a new user </h3>
         <input type="text" name="comment[user_attributes][username]" id="comment_user_attributes_username">
 
-        <%= f.fields_for :user do |user_fields| %>
+
+        <%= f.fields_for :user_attributes do |user_fields| %>
           <%= user_fields.text_field :username %>
         <% end %>
 
