@@ -7,14 +7,3 @@
       <li>  <%= category.name %>  </li>
     <%end%>
   </ul>
-
-
-
-<%= form_for @post do |f| %>
-  <%= f.fields_for :comments, @post.comments.build do |comment| %>
-   <%= comment.text_field :content %>
-  <% end %>
-
-  <%= f.submit %>
-<% end %>
->>>>>>> 6d169f046b620596cd44f51b207a5188d5f3d71b
