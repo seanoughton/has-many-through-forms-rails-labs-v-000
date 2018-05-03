@@ -9,6 +9,15 @@
     <%end%>
   </ul>
 
+
+  <%= form_for comment do |f| %>
+
+    <%= f.label "Content" %>
+    <%= f.text_area :content %>
+
+    <%= f.submit %>
+  <% end %>
+
   <h2>Post Comments: <h2>
     <ul>
       <%@post.comments.each do |comment|%>
