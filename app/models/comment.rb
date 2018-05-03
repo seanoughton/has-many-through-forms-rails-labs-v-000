@@ -4,8 +4,8 @@ class Comment < ActiveRecord::Base
 
   def user_attributes=(attributes)
     if attributes.include?(:username)
-      self.user = User.create(username: attributes[:username])
-      self.user.comments << @comment
+      user = User.create(username: attributes[:username])
+      user.comments << self
     end
     #self.user = User.find(attributes[:user_id])
   end
