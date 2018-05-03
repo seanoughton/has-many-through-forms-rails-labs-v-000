@@ -9,8 +9,7 @@ class Post < ActiveRecord::Base
   accepts_nested_attributes_for :categories
 
   def unique_users
-    self.users
-    binding.pry
+    self.users.uniq
   end
 
 
