@@ -10,7 +10,7 @@ describe 'Posts', type: 'feature' do
       fill_in('post_title', :with => 'Feeling Awesome')
       fill_in('post_content', :with => 'This is going to be an awesome post!')
     end
-=begin
+
     it 'can create a post without a new category' do
       click_button('Create Post')
       expect(page).to have_content('Feeling Awesome')
@@ -35,7 +35,7 @@ describe 'Posts', type: 'feature' do
       expect(page).to have_content('Cool')
       expect(page).to have_content('Funny')
     end
-=end
+
   end
 
   describe 'show' do
@@ -46,7 +46,7 @@ describe 'Posts', type: 'feature' do
       @user = User.create(username: 'RealBigFish')
       @comment1 = Comment.create(content: "This was great!", user: @user, post: @post)
     end
-=begin
+
     it 'should display the title' do
       visit post_path(@post)
       expect(page).to have_content(@post.title)
@@ -61,7 +61,7 @@ describe 'Posts', type: 'feature' do
       visit post_path(@post)
       expect(page).to have_content(@comment1.content)
     end
-=end
+
     it 'should display a list of unique users who have commented on the post' do |variable|
       @comment2 = Comment.create(content: "And another thing, how come there aren't any vegetabls at the movie theater...", user: @user, post: @post)
       visit post_path(@post)
