@@ -15,13 +15,13 @@ describe 'Posts', type: 'feature' do
       click_button('Create Post')
       expect(page).to have_content('Feeling Awesome')
     end
-
+=end
     it 'can create a post with a previously created category' do
       check('Cool')
       click_button('Create Post')
       expect(page).to have_content('Cool')
     end
-=end
+
     it 'can create a post with a brand new category' do
       fill_in('post_categories_attributes_0_name', :with => 'Funny')
       click_button('Create Post')
