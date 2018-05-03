@@ -6,7 +6,7 @@ class Post < ActiveRecord::Base
 
   #accepts_nested_attributes_for :comments
 
-  accepts_nested_attributes_for :categories
+  #accepts_nested_attributes_for :categories
 
 
 end
