@@ -7,7 +7,9 @@ class Post < ActiveRecord::Base
   #accepts_nested_attributes_for :categories
 
   def categories_attributes=(attribute)
-    self.categories << Category.find_or_create_by(name: attribute[:"0"][:name])
+    #self.categories << Category.find_or_create_by(name: attribute[:"0"][:name])
+    category = Category.find_or_create_by(name: attribute[:"0"][:name])
+    self.post_categories.build(category: category)
   end
 
   def categories_attributes
